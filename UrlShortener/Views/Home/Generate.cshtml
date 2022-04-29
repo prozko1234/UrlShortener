@@ -1,0 +1,24 @@
+﻿@model Application.Dtos.LinkDto
+@{
+    ViewData["Title"] = "Generate";
+}
+
+<form asp-action="Generate" enctype="multipart/form-data">
+    <input asp-for="Id" hidden />
+    <div class="container ">
+        <h1 class="text-black text-center mb-3">Generate URL</h1>
+        <div class="row d-flex">
+            <div class="col-3"></div>
+            <div class="col-6 shadow-box">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="col-12 pb-1">
+                    <label asp-for="Url" class="control-label pt-2" style="font-size:20px;">URL</label>
+                    <input asp-for="Url" class="form-control" />
+                </div>
+            </div>
+            <div class="col-12 col-md-7">
+                <input type="submit" value="Generate" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,35 @@
+﻿@model List<Application.Dtos.LinkDto>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="table-responsive-mobile">
+    <table class="table">
+        <tr class="table-th">
+            <th>Code</th>
+            <th>
+                Url
+            </th>
+            <th>
+                Generated url
+            </th>
+        </tr>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <tr class="table-tr">
+                    <td>
+                        @item.Code
+                    </td>
+                    <td>
+                        @item.Url
+                    </td>
+                    <td>
+                        @item.GeneratedLink
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
